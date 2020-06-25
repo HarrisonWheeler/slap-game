@@ -6,17 +6,20 @@ let damageBtns = {
     title: "Slap",
     damage: 1,
     hitCount: 0,
+    countId: "slap-count"
   },
   punch: {
     title: "Punch",
     damage: 5,
     hitCount: 0,
+    countId: "punch-count"
   },
   kick: {
     title: "Kick",
     damage: 10,
     hitCount: 0,
-  }
+    countId: "kick-count"
+  },
 }
 
 // At the beginning of page load, drawButtons()
@@ -31,7 +34,7 @@ function damage(damageType) {
   // if damageType = kick, then -= 10
 
   let damageElem = damageBtns[damageType.toLowerCase()].damage
-  let hitElem = damageBtns[damageType.toLowerCase()].hitCount
+ 
 
   health -= damageElem
 
@@ -39,7 +42,7 @@ function damage(damageType) {
 
   console.log(health);
   drawHealth()
-  drawCount(hitElem)
+  drawCount(damageType)
 }
 
 function drawHealth() {
@@ -47,8 +50,16 @@ function drawHealth() {
   document.getElementById("health-count").innerText = `${health}`
 }
 
+  // Slap
 function drawCount(damageType){
-  document.getElementById("slap-count").innerText = damageType
+
+// make var called insertCount that is Slap, but lowercase, then look at countID
+  let insertCount = damageBtns[damageType.toLowerCase()].countId
+  let count = damageBtns[damageType.toLowerCase()].hitCount
+
+ 
+  document.getElementById(`${insertCount}`).innerText = count
+
 }
 
 
