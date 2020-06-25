@@ -38,7 +38,8 @@ function punch(){
 
 
 function drawHealth(){
- 
+  // after a button press, send "health" number to the header where the health output box is
+  
 }
 
 // ANCHOR Dynamically add the buttons to the page. This allows buttons to be added later.
