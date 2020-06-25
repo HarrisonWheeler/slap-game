@@ -4,15 +4,18 @@ let health = 100;
 let damageBtns = {
   slap: {
     title: "Slap",
-    damage: 1
+    damage: 1,
+    hitCount: 0,
   },
   punch: {
     title: "Punch",
-    damage: 5
+    damage: 5,
+    hitCount: 0,
   },
   kick: {
     title: "Kick",
-    damage: 10
+    damage: 10,
+    hitCount: 0,
   }
 }
 
@@ -26,8 +29,11 @@ function damage(damageType) {
   // if damageType = slap, then 
   // if damageType = punch, then -= 5
   // if damageType = kick, then -= 10
-  debugger
+
   health -= damageBtns[damageType.toLowerCase()].damage
+
+  damageBtns[damageType.toLowerCase()].hitCount += 1
+
   console.log(health);
   drawHealth()
 }
