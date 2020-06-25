@@ -27,8 +27,14 @@ function damage(damageType) {
   // if damageType = slap, then 
   // if damageType = punch, then -= 5
   // if damageType = kick, then -= 10
-  console.log(damageBtns[damageType].damage)
+  // debugger
+  health -= damageBtns[damageType.toLowerCase()].damage
+  console.log(health);
 
+}
+
+function drawHealth() {
+  document.getElementById("health-count").innerText
 }
 
 
@@ -67,7 +73,7 @@ function drawButtons() {
   for (let key in damageBtns) {
     let item = damageBtns[key]
     template += /*html*/`
-    <button class="btn btn-lg btn-primary" onclick="damage('${ item}')"> ${item} </button>
+    <button class="btn btn-lg btn-primary" onclick="damage('${item.title}')"> ${item.title} </button>
     </div >
 
       `
