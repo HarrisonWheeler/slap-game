@@ -1,10 +1,19 @@
 let health = 100;
 
 
-let buttons = {
-  slapBtn: "slap",
-  punchBtn: "punch",
-  kickBtn: "kick",
+let damageBtns = {
+  slap: {
+    title: "Slap",
+    damage: 1
+  },
+  punch: {
+    title: "Punch",
+    damage: 5
+  },
+  kick: {
+    title: "Kick",
+    damage: 10
+  }
 }
 
 // At the beginning of page load, drawButtons()
@@ -14,9 +23,11 @@ let buttons = {
 
 // ANCHOR Define the slap, kick, and punch functions
 
-function damage(){
-  // if damageType = slap, then --
-  // if damageType = kick, then -= 5
+function damage(damageType) {
+  // if damageType = slap, then 
+  // if damageType = punch, then -= 5
+  // if damageType = kick, then -= 10
+  console.log(damageBtns[damageType].damage)
 
 }
 
@@ -53,11 +64,11 @@ function drawHealth() {
 // ANCHOR Dynamically add the buttons to the page. This allows buttons to be added later.
 function drawButtons() {
   let template = ""
-  for (let key in buttons) {
-    let item = buttons[key]
+  for (let key in damageBtns) {
+    let item = damageBtns[key]
     template += /*html*/`
-    <button class="btn btn-lg btn-primary" onclick="punch()">Punch</button>
-    </div>
+    <button class="btn btn-lg btn-primary" onclick="damage('${ item}')"> ${item} </button>
+    </div >
 
       `
   }
@@ -65,3 +76,5 @@ function drawButtons() {
   document.getElementById("insert-btns").innerHTML = template
 
 }
+
+drawButtons()
