@@ -20,52 +20,24 @@ let damageBtns = {
 // drawButtons()
 
 
-
 // ANCHOR Define the slap, kick, and punch functions
 
 function damage(damageType) {
   // if damageType = slap, then 
   // if damageType = punch, then -= 5
   // if damageType = kick, then -= 10
-  // debugger
+  debugger
   health -= damageBtns[damageType.toLowerCase()].damage
   console.log(health);
-
+  drawHealth()
 }
 
 function drawHealth() {
-  document.getElementById("health-count").innerText
+  // take in damage info and dump result at health on page
+  document.getElementById("health-count").innerText = `${health}`
 }
 
 
-function slap() {
-  health--;
-  console.log(health);
-
-  //  drawHealth()
-}
-
-function kick() {
-  health -= 5;
-  console.log(health);
-
-  //  drawHealth()
-}
-
-function punch() {
-  health -= 10;
-  console.log(health);
-
-  //  drawHealth()
-}
-
-
-
-
-function drawHealth() {
-  // after a button press, send "health" number to the header where the health output box is
-
-}
 
 // ANCHOR Dynamically add the buttons to the page. This allows buttons to be added later.
 function drawButtons() {
