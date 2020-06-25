@@ -13,6 +13,14 @@ let buttons = {
 
 
 // ANCHOR Define the slap, kick, and punch functions
+
+function damage(){
+  // if damageType = slap, then --
+  // if damageType = kick, then -= 5
+
+}
+
+
 function slap() {
   health--;
   console.log(health);
@@ -48,7 +56,9 @@ function drawButtons() {
   for (let key in buttons) {
     let item = buttons[key]
     template += /*html*/`
-      html here
+    <button class="btn btn-lg btn-primary" onclick="punch()">Punch</button>
+    </div>
+
       `
   }
 
