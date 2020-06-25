@@ -28,7 +28,7 @@ function kick() {
 }
 
 function punch() {
-  health - 10;
+  health -= 10;
   console.log(health);
 
   //  drawHealth()
