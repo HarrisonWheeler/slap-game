@@ -30,17 +30,25 @@ function damage(damageType) {
   // if damageType = punch, then -= 5
   // if damageType = kick, then -= 10
 
-  health -= damageBtns[damageType.toLowerCase()].damage
+  let damageElem = damageBtns[damageType.toLowerCase()].damage
+  let hitElem = damageBtns[damageType.toLowerCase()].hitCount
+
+  health -= damageElem
 
   damageBtns[damageType.toLowerCase()].hitCount += 1
 
   console.log(health);
   drawHealth()
+  drawCount(hitElem)
 }
 
 function drawHealth() {
   // take in damage info and dump result at health on page
   document.getElementById("health-count").innerText = `${health}`
+}
+
+function drawCount(damageType){
+  document.getElementById("slap-count").innerText = damageType
 }
 
 
