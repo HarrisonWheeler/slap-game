@@ -1,10 +1,15 @@
 let health = 100;
 
 
-buttons {
-
-
+let buttons = {
+  slapBtn: "slap",
+  punchBtn: "punch",
+  kickBtn: "kick",
 }
+
+// At the beginning of page load, drawButtons()
+// drawButtons()
+
 
 
 // ANCHOR Define the slap, kick, and punch functions
@@ -16,14 +21,14 @@ function slap(){
 }
 
 function kick(){
-  health--;
+  health-5;
  console.log(health);
  
  //  drawHealth()
 }
 
 function punch(){
-  health--;
+  health-10;
  console.log(health);
  
  //  drawHealth()
@@ -39,21 +44,13 @@ function drawHealth(){
 // ANCHOR Dynamically add the buttons to the page. This allows buttons to be added later.
 function drawButtons(){
   let template = ""
-  for (let prop in menuItems) {
-      let item = menuItems[prop]
-      // if(even iteration add row)
-      // template += whatever
+  for (let key in buttons) {
+      let item = buttons[key]
       template += /*html*/`
-      <div class="col-4 bg-light rounded border shadow-lg p-5">
-              <h3>${item.title}</h3>
-              <h5>${item.ingredients}</h5>
-              <h5>Vegan: ${item.vegan}</h5>
-              <h5>${item.price}</h5>
-              <button class="btn btn-success btn-block" onclick="addToCart('${prop}')"> Buy ${item.title}</button>
-          </div>
+      html here
       `
   }
 
-  document.getElementById("menu-items").innerHTML = template
+  document.getElementById("insert-btns").innerHTML = template
 
 }
